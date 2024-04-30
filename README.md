@@ -11,14 +11,14 @@ Este plugin te permite personalizar la página de inicio de sesión de WordPress
 
 ### 1. Descarga el Plugin
 
-- Ve a la [página de releases](URL_DE_TU_PLUGIN) en GitHub.
-- Descarga el archivo `tudominio-customizations.zip` desde la última release.
+- Ve a la [página de releases en GitHub](https://github.com/CarrilloJhonatan/login-customizer-wp/archive/refs/heads/main.zip).
+- Descarga el archivo `login-customizer-wp-main.zip` desde el repositorio.
 
 ### 2. Instala el Plugin en WordPress
 
 - Inicia sesión en tu sitio web de WordPress como administrador.
 - Ve a `Plugins` > `Añadir nuevo`.
-- Haz clic en `Subir plugin` y selecciona el archivo `tudominio-customizations.zip` que descargaste.
+- Haz clic en `Subir plugin` y selecciona el archivo `login-customizer-wp-main.zip` que descargaste.
 - Haz clic en `Instalar ahora` y luego en `Activar plugin`.
 
 ### 3. Configura las Opciones de Personalización
