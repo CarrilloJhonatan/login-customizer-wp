@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Login Customizer WP
- * Plugin URI: https://clikssmaster.com
+ * Plugin URI: https://clickssmaster.com/
  * Description: Plugin para personalizar el formulario de inicio de sesión de WordPress.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: DeveloperAnonimous
- * Author URI: https://clikssmaster.com
+ * Author URI: https://clickssmaster.com/
  * License: GPL 2+
- * License URI: https://clikssmaster.com
+ * License URI: https://clickssmaster.com/
  */
 
 // Función para agregar la página de configuración al menú de administración
@@ -135,9 +135,26 @@ function master_login_logo() {
             text-shadow: 0 -1px 1px <?php echo esc_attr($button_color); ?>, 1px 0 1px <?php echo esc_attr($button_color); ?>, 0 1px 1px <?php echo esc_attr($button_color); ?>, -1px 0 1px <?php echo esc_attr($button_color); ?> !important;
         }
 
+        .wp-core-ui .button-secondary {
+			color: <?php echo esc_attr($button_color); ?> !important;
+			border-color: #00000000 !important;
+		}
+
+        .button {
+			color: <?php echo esc_attr($button_color); ?> !important;
+			border-color: <?php echo esc_attr($button_color); ?> !important;
+			background: <?php echo esc_attr($bg_color); ?>;
+			vertical-align: top;
+		}
+
         body.login {
             background-color: <?php echo esc_attr($bg_color); ?>;  // Color de fondo
         }
+
+        .login #backtoblog a,
+		.login #nav a {
+			color: <?php echo esc_attr($button_color); ?> !important;
+		}
     </style>
     <?php
 }
