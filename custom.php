@@ -155,6 +155,10 @@ function master_login_logo() {
 		.login #nav a {
 			color: <?php echo esc_attr($button_color); ?> !important;
 		}
+
+        a {
+    color: <?php echo esc_attr($button_color); ?> !important;
+}
     </style>
     <?php
 }
