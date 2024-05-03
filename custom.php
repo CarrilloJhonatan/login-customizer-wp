@@ -143,7 +143,6 @@ function master_login_logo() {
         .button {
 			color: <?php echo esc_attr($button_color); ?> !important;
 			border-color: <?php echo esc_attr($button_color); ?> !important;
-			background: #ffffff !important;
 			vertical-align: top;
 		}
 
