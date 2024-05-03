@@ -3,7 +3,7 @@
  * Plugin Name: Login Customizer WP
  * Plugin URI: https://clickssmaster.com/
  * Description: Plugin para personalizar el formulario de inicio de sesión de WordPress.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: DeveloperAnonimous
  * Author URI: https://clickssmaster.com/
  * License: GPL 2+
@@ -129,7 +129,7 @@ function master_login_logo() {
         .wp-core-ui .button-primary {
             background: <?php echo esc_attr($button_color); ?> !important;  // Color del botón primario
             border-color: <?php echo esc_attr($button_color); ?> !important;
-            color: #fff !important;
+            color: #ffffff !important;
             text-decoration: none;
             box-shadow: 0 1px 0 <?php echo esc_attr($button_color); ?> !important;
             text-shadow: 0 -1px 1px <?php echo esc_attr($button_color); ?>, 1px 0 1px <?php echo esc_attr($button_color); ?>, 0 1px 1px <?php echo esc_attr($button_color); ?>, -1px 0 1px <?php echo esc_attr($button_color); ?> !important;
@@ -143,7 +143,7 @@ function master_login_logo() {
         .button {
 			color: <?php echo esc_attr($button_color); ?> !important;
 			border-color: <?php echo esc_attr($button_color); ?> !important;
-			background: <?php echo esc_attr($bg_color); ?>;
+			background: #ffffff !important;
 			vertical-align: top;
 		}
 
