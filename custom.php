@@ -156,7 +156,7 @@ function master_login_logo() {
         /* TAMANO DE IMAGEN RECOMENDADO 400 X 100 PX */
         .login form {
             border-radius: 20px;
-            background-color: <?php echo esc_attr($form_bg_color); ?>;  // Color de fondo del formulario
+            background-color: <?php echo esc_attr($form_bg_color); ?> !important;  // Color de fondo del formulario
         }
 
         .login label {
