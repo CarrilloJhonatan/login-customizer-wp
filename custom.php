@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Login Customizer WP
  * Plugin URI: https://clickssmaster.com/
@@ -11,7 +12,8 @@
  */
 
 // Función para agregar la página de configuración al menú de administración
-function custom_login_page_settings() {
+function custom_login_page_settings()
+{
     add_menu_page(
         'Personalización de Login',          // Título de la página en el menú de administración
         'Login Personalizado',               // Título visible en el menú
@@ -23,8 +25,9 @@ function custom_login_page_settings() {
 add_action('admin_menu', 'custom_login_page_settings');
 
 // Función para renderizar la página de configuración
-function render_custom_login_settings_page() {
-    ?>
+function render_custom_login_settings_page()
+{
+?>
     <div class="wrap">
         <h1>Personalización de Login</h1>
         <form method="post" action="options.php">
@@ -35,11 +38,12 @@ function render_custom_login_settings_page() {
             ?>
         </form>
     </div>
-    <?php
+<?php
 }
 
 // Función para registrar las opciones de configuración
-function custom_login_settings_init() {
+function custom_login_settings_init()
+{
     register_setting('custom-login-settings', 'custom_login_logo_url');  // Registra la opción para la URL del logo
     register_setting('custom-login-settings', 'custom_login_background_color');  // Registra la opción para el color de fondo
     register_setting('custom-login-settings', 'custom_primary_button_color');  // Registra la opción para el color del botón primario
@@ -49,7 +53,8 @@ function custom_login_settings_init() {
 add_action('admin_init', 'custom_login_settings_init');
 
 // Función para agregar campos de configuración en la página
-function add_custom_login_settings_fields() {
+function add_custom_login_settings_fields()
+{
     add_settings_section(
         'custom-login-section',                         // ID de la sección
         'Configuración de Login Personalizado',         // Título de la sección
@@ -100,72 +105,91 @@ function add_custom_login_settings_fields() {
 add_action('admin_init', 'add_custom_login_settings_fields');
 
 // Callback para la sección de configuración
-function custom_login_section_callback() {
+function custom_login_section_callback()
+{
     echo 'Ingrese los valores personalizados para la página de login:';
 }
 
 // Callback para el campo de URL del logo
-function custom_login_logo_url_callback() {
+function custom_login_logo_url_callback()
+{
     $logo_url = get_option('custom_login_logo_url');
     echo '<input type="text" name="custom_login_logo_url" value="' . esc_attr($logo_url) . '" />';
 }
 
 // Callback para el campo de color de fondo
-function custom_login_background_color_callback() {
+function custom_login_background_color_callback()
+{
     $bg_color = get_option('custom_login_background_color');
     echo '<input type="text" name="custom_login_background_color" value="' . esc_attr($bg_color) . '" />';
 }
 
 // Callback para el campo de color del botón primario
-function custom_primary_button_color_callback() {
+function custom_primary_button_color_callback()
+{
     $button_color = get_option('custom_primary_button_color');
     echo '<input type="text" name="custom_primary_button_color" value="' . esc_attr($button_color) . '" />';
 }
 
 // Callback para el campo de color de fondo del formulario
-function custom_login_form_background_color_callback() {
+function custom_login_form_background_color_callback()
+{
     $form_bg_color = get_option('custom_login_form_background_color');
     echo '<input type="text" name="custom_login_form_background_color" value="' . esc_attr($form_bg_color) . '" />';
 }
 
 // Callback para el campo de color de las etiquetas
-function custom_login_label_color_callback() {
+function custom_login_label_color_callback()
+{
     $label_color = get_option('custom_login_label_color');
     echo '<input type="text" name="custom_login_label_color" value="' . esc_attr($label_color) . '" />';
 }
 
 // Función para personalizar el login con las opciones configuradas
-function master_login_logo() {
+function master_login_logo()
+{
     $logo_url = get_option('custom_login_logo_url');
     $bg_color = get_option('custom_login_background_color');
     $button_color = get_option('custom_primary_button_color');
     $form_bg_color = get_option('custom_login_form_background_color');
     $label_color = get_option('custom_login_label_color');
 
-    ?>
+?>
     <style type="text/css">
         #login h1 a,
         .login h1 a {
-            background-image: url('<?php echo esc_url($logo_url); ?>');  // URL del logo
+            background-image: url('<?php echo esc_url($logo_url); ?>'); // URL del logo
             margin-bottom: 0;
             background-size: 90%;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
+
         /* TAMANO DE IMAGEN RECOMENDADO 400 X 100 PX */
         .login form {
             border-radius: 20px;
             border-color: <?php echo esc_attr($form_bg_color); ?> !important;
-            background-color: <?php echo esc_attr($form_bg_color); ?> !important;  // Color de fondo del formulario
+            background-color: <?php echo esc_attr($form_bg_color); ?> !important; // Color de fondo del formulario
         }
 
         .login label {
-            color: <?php echo esc_attr($label_color); ?>;  // Color de las etiquetas
+            color: <?php echo esc_attr($label_color); ?>; // Color de las etiquetas
+        }
+
+        .login * {
+            margin: 0;
+            padding: 0;
+            color: <?php echo esc_attr($label_color); ?>; // Color de las etiquetas
+        }
+
+        #login form p.two-factor-prompt {
+            margin-bottom: 1em;
+            color: <?php echo esc_attr($label_color); ?>; // Color de las etiquetas
         }
 
         .wp-core-ui .button-primary {
-            background: <?php echo esc_attr($button_color); ?> !important;  // Color del botón primario
+            background: <?php echo esc_attr($button_color); ?> !important; // Color del botón primario
             border-color: <?php echo esc_attr($button_color); ?> !important;
             color: #ffffff !important;
             text-decoration: none;
@@ -174,41 +198,43 @@ function master_login_logo() {
         }
 
         .wp-core-ui .button-secondary {
-			color: <?php echo esc_attr($button_color); ?> !important;
-			border-color: #00000000 !important;
-		}
+            color: <?php echo esc_attr($button_color); ?> !important;
+            border-color: #00000000 !important;
+        }
 
         .button {
-			color: <?php echo esc_attr($button_color); ?> !important;
-			border-color: <?php echo esc_attr($button_color); ?> !important;
-			vertical-align: top;
-		}
+            color: <?php echo esc_attr($button_color); ?> !important;
+            border-color: <?php echo esc_attr($button_color); ?> !important;
+            vertical-align: top;
+        }
 
         body.login {
-            background-color: <?php echo esc_attr($bg_color); ?>;  // Color de fondo
+            background-color: <?php echo esc_attr($bg_color); ?>; // Color de fondo
         }
 
         .login #backtoblog a,
-		.login #nav a {
-			color: <?php echo esc_attr($button_color); ?> !important;
-		}
+        .login #nav a {
+            color: <?php echo esc_attr($button_color); ?> !important;
+        }
 
         a {
             color: <?php echo esc_attr($button_color); ?> !important;
         }
     </style>
-    <?php
+<?php
 }
 add_action('login_enqueue_scripts', 'master_login_logo');
 
 // Cambiar la URL del logo en la página de login
-function master_login_logo_url() {
+function master_login_logo_url()
+{
     return home_url();
 }
 add_filter('login_headerurl', 'master_login_logo_url');
 
 // Cambiar el title del logo en la página de login
-function master_login_logo_url_title() {
+function master_login_logo_url_title()
+{
     return 'Powered by Your Site Name';
 }
 add_filter('login_headertext', 'master_login_logo_url_title');
