@@ -157,6 +157,7 @@ function master_login_logo() {
         .login form {
             border-radius: 20px;
             background-color: <?php echo esc_attr($form_bg_color); ?> !important;  // Color de fondo del formulario
+            border: 1px solid <?php echo esc_attr($form_bg_color); ?> !important;
         }
 
         .login label {
