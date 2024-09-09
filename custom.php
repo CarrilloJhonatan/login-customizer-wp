@@ -188,6 +188,10 @@ function master_login_logo()
             color: <?php echo esc_attr($label_color); ?>; // Color de las etiquetas
         }
 
+        p.two-factor-prompt, .backup-methods-wrap {
+            color: <?php echo esc_attr($label_color); ?>;
+        }
+        
         .wp-core-ui .button-primary {
             background: <?php echo esc_attr($button_color); ?> !important; // Color del botón primario
             border-color: <?php echo esc_attr($button_color); ?> !important;
