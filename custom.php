@@ -188,6 +188,24 @@ function master_login_logo()
             color: <?php echo esc_attr($label_color); ?>; // Color de las etiquetas
         }
 
+        .language-switcher {
+            margin: 0 auto;
+            padding: 0 0 24px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #language-switcher {
+            padding: 10px;
+            overflow: visible;
+            background: 0 0;
+            border: none;
+            box-shadow: none;
+            width: fit-content;
+        }
+
         p.two-factor-prompt, .backup-methods-wrap {
             color: <?php echo esc_attr($label_color); ?>;
         }
@@ -222,7 +240,7 @@ function master_login_logo()
         }
 
         a {
-            color: <?php echo esc_attr($button_color); ?> !important;
+            color: <?php echo esc_attr($form_bg_color); ?> !important;
         }
     </style>
 <?php
