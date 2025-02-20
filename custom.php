@@ -4,7 +4,7 @@
  * Plugin Name: Login Customizer WP
  * Plugin URI: https://clickssmaster.com/
  * Description: Plugin para personalizar el formulario de inicio de sesión de WordPress.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: DeveloperAnonimous
  * Author URI: https://clickssmaster.com/
  * License: GPL 2+
