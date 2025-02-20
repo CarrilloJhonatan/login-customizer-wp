@@ -236,7 +236,7 @@ function master_login_logo()
 
         .login #backtoblog a,
         .login #nav a {
-            color: <?php echo esc_attr($button_color); ?> !important;
+            color: <?php echo esc_attr($form_bg_color); ?> !important;
         }
 
         a {
