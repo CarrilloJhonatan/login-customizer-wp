@@ -161,6 +161,7 @@ function master_login_logo()
             background-image: url('<?php echo esc_url($logo_url); ?>'); // URL del logo
             margin-bottom: 0;
             background-size: 90%;
+            height: 130px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
