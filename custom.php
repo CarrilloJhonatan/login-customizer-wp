@@ -235,13 +235,19 @@ function master_login_logo()
             background-color: <?php echo esc_attr($bg_color); ?>; // Color de fondo
         }
 
-        .login #backtoblog a,
-        .login #nav a {
-            color: <?php echo esc_attr($form_bg_color); ?> !important;
+        #wfls-prompt-overlay{
+            background-color: <?php echo esc_attr($form_bg_color);  ?> !important; // Color de fondo
         }
 
+        .login #backtoblog a {
+            color: <?php echo esc_attr($label_color); ?> !important;
+        }
+
+        .login #nav a {
+            color: <?php echo esc_attr($label_color); ?> !important;
+        }
         a {
-            color: <?php echo esc_attr($form_bg_color); ?> !important;
+            color: <?php echo esc_attr($label_color); ?> !important;
         }
     </style>
 <?php
