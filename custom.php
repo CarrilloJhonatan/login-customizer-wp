@@ -4,7 +4,7 @@
  * Plugin Name: Login Customizer WP
  * Plugin URI: https://jhonydev.pro/
  * Description: Plugin para personalizar el formulario de inicio de sesión de WordPress.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Jhony Dev
  * Author URI: https://jhonydev.pro/
  * License: GPL 2+
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LCW_VERSION', '1.1.1' );
+define( 'LCW_VERSION', '1.1.2' );
 define( 'LCW_SLUG', 'login-customizer-wp' );
 define( 'LCW_TEXTDOMAIN', 'login-customizer-wp' );
 define( 'LCW_PATH', plugin_dir_path( __FILE__ ) );
