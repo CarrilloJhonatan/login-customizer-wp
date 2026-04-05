@@ -1,61 +1,61 @@
 # Login Customizer WP
 
-Plugin para personalizar la página de inicio de sesión de WordPress (logo, colores, navegación, inputs, mensajes/notices) con panel moderno, shortcodes, REST API y bloque Gutenberg.
+Plugin to customize the WordPress login page (logo, colors, navigation links, input text, status messages/notices) with a modern admin panel, shortcodes, a REST API, and a Gutenberg block.
 
-## Características
+## Features
 
-- Panel de configuración con WordPress Color Picker (paletas predefinidas + personalización) y vista previa en tiempo real.
-- Selector de imagen nativo (Media Library) con selección/subida y opción de recorte.
-- Logo en login usando la imagen original (full) cuando se selecciona desde la Media Library.
-- Colores configurables:
-  - Fondo (`background_color`)
-  - Fondo del formulario (`form_background_color`)
-  - Botón primario (`primary_button_color`)
-  - Texto/etiquetas (`label_color`)
-  - Links de navegación (`nav_link_color`)
-  - Texto en inputs (`input_text_color`)
-- Los mensajes de estado (`#login_error`, `.message`, `.success`, `.notice`) usan el color de Texto/etiquetas.
-- CSS con variables (`--lcw-*`) para facilitar futuras modificaciones y compatibilidad con temas (claro/oscuro).
-- Validación/sanitización de datos con helpers y funciones nativas de WordPress.
-- Caché inteligente del CSS del login con invalidación automática.
-- Sistema de plantillas sobrescribibles desde el tema.
-- Shortcodes dinámicos.
-- REST API para leer/actualizar settings.
-- Compatibilidad Gutenberg mediante `register_block_type()` (bloque dinámico).
-- Internacionalización (textdomain + `.pot`).
-- Logger estructurado (JSON) opcional.
-- Tests unitarios (scaffolding PHPUnit + Brain Monkey).
+- Settings panel using the WordPress Color Picker (predefined palettes + custom editing) with real-time preview.
+- Native image selector (Media Library) with upload/select and optional cropping.
+- Login logo uses the original image (full) when selected from the Media Library.
+- Configurable colors:
+  - Background (`background_color`)
+  - Form background (`form_background_color`)
+  - Primary button (`primary_button_color`)
+  - Text/labels (`label_color`)
+  - Navigation links (`nav_link_color`)
+  - Input text (`input_text_color`)
+- Status messages (`#login_error`, `.message`, `.success`, `.notice`) use the Text/labels color.
+- CSS variables (`--lcw-*`) for easier future changes and theme compatibility (light/dark).
+- Data validation/sanitization using helpers and WordPress native functions.
+- Smart caching for the login CSS with automatic invalidation.
+- Theme-overridable template system.
+- Dynamic shortcodes.
+- REST API to read/update settings.
+- Gutenberg compatibility via `register_block_type()` (dynamic block).
+- Internationalization (textdomain + `.pot`).
+- Optional structured (JSON) logger.
+- Unit tests (PHPUnit + Brain Monkey scaffolding).
 
-## Requisitos
+## Requirements
 
-- WordPress 6.x recomendado (debe incluir Media Library y Color Picker).
+- WordPress 6.x recommended (must include Media Library and Color Picker).
 - PHP >= 7.4.
 
-## Instalación
+## Installation
 
-1. Descarga el plugin y súbelo como ZIP desde `Plugins > Añadir nuevo > Subir plugin`.
-2. Actívalo.
-3. En el admin abre `Login Customizer` para configurar.
+1. Download the plugin and upload it as a ZIP from `Plugins > Add New > Upload Plugin`.
+2. Activate it.
+3. In the admin menu open `Login Customizer` to configure.
 
-## Configuración (Admin)
+## Configuration (Admin)
 
-Menú: `Login Customizer`
+Menu: `Login Customizer`
 
 - Logo:
-  - Selecciona una imagen desde la Media Library (opcionalmente recórtala).
-  - También puedes pegar una URL de imagen (se normaliza y sanitiza).
-- Paletas:
-  - Selecciona una paleta predefinida o usa “Personalizada” para editar colores manualmente.
-- Vista previa:
-  - Refleja cambios de colores e imagen en vivo.
+  - Select an image from the Media Library (optionally crop it).
+  - You can also paste an image URL (it is normalized and sanitized).
+- Palettes:
+  - Choose a predefined palette or use “Custom” to edit colors manually.
+- Preview:
+  - Reflects color and image changes live.
 
-## Opciones guardadas (wp_options)
+## Stored options (wp_options)
 
-Se guardan en una sola opción:
+All settings are stored in a single option:
 
 - `lcw_settings` (array)
 
-Claves principales:
+Main keys:
 
 - `logo_attachment_id` (int)
 - `logo_url` (string)
@@ -67,41 +67,41 @@ Claves principales:
 - `input_text_color` (hex)
 - `palette` (string)
 - `template` (string)
-- `cache_ttl` (int, mínimo 60)
+- `cache_ttl` (int, minimum 60)
 - `enable_logging` (bool)
 - `login_header_url` (url)
 - `login_header_text` (string)
 
-Compatibilidad: si existen opciones legacy (`custom_login_*`), el plugin las lee como fallback.
+Compatibility: if legacy options exist (`custom_login_*`), the plugin reads them as a fallback.
 
 ## Shortcodes
 
-- `[lcw_login_box]` Inserta un formulario de login.
-  - Atributos: `redirect`, `remember`, `template`, `cache`.
-- `[lcw_login_logo]` Inserta el logo configurado.
-  - Atributos: `size`, `template`, `cache`.
+- `[lcw_login_box]` Inserts a login form.
+  - Attributes: `redirect`, `remember`, `template`, `cache`.
+- `[lcw_login_logo]` Inserts the configured logo.
+  - Attributes: `size`, `template`, `cache`.
 
-## Plantillas
+## Templates
 
-Plantillas incluidas en `templates/` del plugin:
+Templates included in the plugin `templates/` directory:
 
 - `login-box.php`
 - `logo.php`
 
-Override desde el tema:
+Theme override:
 
-- Copia las plantillas a:
-  - `wp-content/themes/TU-TEMA/login-customizer-wp/templates/`
-  - o `wp-content/themes/TU-CHILD/login-customizer-wp/templates/`
+- Copy templates to:
+  - `wp-content/themes/YOUR-THEME/login-customizer-wp/templates/`
+  - or `wp-content/themes/YOUR-CHILD/login-customizer-wp/templates/`
 
 ## Gutenberg
 
-Bloque dinámico:
+Dynamic block:
 
-- `Login Box (LCW)` (categoría Widgets)
-- Renderiza en frontend usando los shortcodes.
+- `Login Box (LCW)` (Widgets category)
+- Renders on the frontend using the shortcodes.
 
-Archivos del bloque:
+Block files:
 
 - `blocks/login-customizer/block.json`
 - `blocks/login-customizer/editor.js`
@@ -114,21 +114,21 @@ Namespace: `lcw/v1`
 - `GET /wp-json/lcw/v1/settings`
 - `POST /wp-json/lcw/v1/settings`
 
-Permisos: requiere `manage_options`.
+Permissions: requires `manage_options`.
 
-## Caché
+## Cache
 
-- El CSS del login se cachea usando transients.
-- La invalidación se hace automáticamente cuando:
-  - Se guardan settings (`lcw_cache_version` cambia).
-  - Cambia la versión del plugin.
-  - Cambia el archivo generador de estilos (mtime).
+- The login CSS is cached using transients.
+- Automatic invalidation happens when:
+  - Settings are saved (`lcw_cache_version` changes).
+  - The plugin version changes.
+  - The style generator file changes (mtime).
 
-Si necesitas forzar, abre ajustes y pulsa “Guardar cambios”.
+If you need to force-refresh, open settings and click “Save changes”.
 
-## Hooks y filtros
+## Hooks and filters
 
-Filtros principales:
+Main filters:
 
 - `lcw_settings_defaults`
 - `lcw_sanitize_settings`
@@ -146,39 +146,39 @@ Action:
 ## i18n
 
 - Text Domain: `login-customizer-wp`
-- Archivo `.pot`: `languages/login-customizer-wp.pot`
+- `.pot` file: `languages/login-customizer-wp.pot`
 
 ## Logs
 
-Si activas “Habilitar logs estructurados”, se enviarán eventos a `error_log` en formato JSON (útil para debugging).
+If you enable “Structured logs”, events will be sent to `error_log` in JSON format (useful for debugging).
 
-## Desarrollo y tests
+## Development and tests
 
-Dependencias de desarrollo vía Composer:
+Development dependencies via Composer:
 
 1. `composer install`
-2. Ejecuta tests con PHPUnit (según tu entorno):
+2. Run PHPUnit tests (depending on your environment):
    - `vendor/bin/phpunit`
 
-Archivos:
+Files:
 
 - `phpunit.xml.dist`
 - `tests/`
 
-## Estructura del proyecto
+## Project structure
 
-- `custom.php`: bootstrap del plugin.
-- `includes/`: código del plugin (módulos, settings, utils, templates loader).
-- `assets/admin/`: JS/CSS del panel.
-- `templates/`: plantillas base.
-- `blocks/`: bloque Gutenberg.
+- `custom.php`: plugin bootstrap.
+- `includes/`: plugin code (modules, settings, utils, template loader).
+- `assets/admin/`: admin panel JS/CSS.
+- `templates/`: base templates.
+- `blocks/`: Gutenberg block.
 - `languages/`: i18n.
-- `tests/`: tests unitarios.
+- `tests/`: unit tests.
 
-## Solución de problemas
+## Troubleshooting
 
-- Si ves estilos antiguos en el login:
-  - Guarda ajustes una vez.
-  - Limpia caché del navegador y cualquier plugin de caché/minificación.
-- Si el logo no se actualiza en vista previa:
-  - Verifica que la URL sea válida (sin backticks, sin `url(...)` pegado, sin `)` al final).
+- If you see old styles on the login page:
+  - Save settings once.
+  - Clear browser cache and any caching/minification plugin cache.
+- If the logo does not update in the live preview:
+  - Ensure the URL is valid (no backticks, no pasted `url(...)`, no trailing `)`).
