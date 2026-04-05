@@ -23,8 +23,8 @@ Este plugin te permite personalizar la página de inicio de sesión de WordPress
 
 ### 3. Configura las Opciones de Personalización
 
-- En el menú de administración de WordPress, ve a `Configuración` > `Personalización de Login`.
-- Ingresa la URL de tu logo, el color de fondo deseado y el color del botón primario.
+- En el menú de administración de WordPress, abre `Login Customizer`.
+- Selecciona un logo desde la Media Library (con opción de recorte) y configura colores con paletas o selección personalizada con vista previa en vivo.
 - Haz clic en `Guardar Cambios` para aplicar las configuraciones.
 
 ### 4. ¡Listo!
@@ -37,3 +37,12 @@ Ahora puedes visitar la página de inicio de sesión de WordPress para ver tus p
 - Si deseas deshacer las personalizaciones, simplemente elimina o desactiva el plugin desde `Plugins` en tu panel de administración.
 
 ¡Disfruta de tu página de inicio de sesión personalizada!
+
+## Shortcodes
+
+- `[lcw_login_box]` Inserta un formulario de login.
+- `[lcw_login_logo]` Inserta el logo configurado.
+
+## Gutenberg
+
+- Bloque: `Login Box (LCW)` (categoría Widgets).

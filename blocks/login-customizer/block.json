@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "login-customizer-wp/login-box",
+  "title": "Login Box (LCW)",
+  "category": "widgets",
+  "icon": "admin-users",
+  "description": "Inserta un formulario de login basado en Login Customizer WP.",
+  "textdomain": "login-customizer-wp",
+  "attributes": {
+    "redirect": {
+      "type": "string",
+      "default": ""
+    },
+    "showLogo": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}
+
